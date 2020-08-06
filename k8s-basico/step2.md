@@ -33,6 +33,8 @@ spec:
 
 `kubectl get deployments`{{execute}}
 
+`kubectl describe deployment webserver`{{execute}}
+
 `kubectl get replicasets`{{execute}}
 
 `kubectl get pods`{{execute}}
