@@ -1,4 +1,4 @@
-#
+
 ### Obtendo a Versão do Cluster
 
 `kubectl version`{{execute}}
