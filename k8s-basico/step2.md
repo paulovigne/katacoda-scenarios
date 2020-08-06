@@ -43,7 +43,7 @@ spec:
 
 ### Apagando um Deployment
 
-kubectl delete pods <nomedopod>
+`kubectl delete pods <nomedopod>`{{copy}}
 
 `kubectl delete pods --all`{{execute}}
 
