@@ -1,4 +1,4 @@
-[[kubectl get nodes]]{{execute}}
+`kubectl get nodes`{{copy}}
 
 NodePort: https://[[HOST_SUBDOMAIN]]-38080-[[KATACODA_HOST]].environments.katacoda.com/
 
