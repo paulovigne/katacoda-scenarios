@@ -1,3 +1,4 @@
+#
 ### Obtendo a Versão do Cluster
 
 `kubectl version`{{execute}}
@@ -17,3 +18,11 @@
 `kubectl get namespaces`{{execute}}
 
 `kubectl describe ns default`{{execute}}
+
+### Obtendo os Pods:
+
+`kubectl get pods -n kube-system`{{execute}}
+
+`kubectl get pods -A`{{execute}}
+
+`kubectl get pods`{{execute}}
