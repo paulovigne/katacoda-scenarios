@@ -11,6 +11,5 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: nginx
-  sessionAffinity: None
+    app: webserver
   type: ClusterIP

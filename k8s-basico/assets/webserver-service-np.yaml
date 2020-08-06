@@ -7,10 +7,10 @@ metadata:
 spec:
   ports:
   - name: http
-    nodePort: 38080
+    nodePort: 31080
     port: 8080
     protocol: TCP
     targetPort: 8080
   selector:
-    app: nginx
+    app: webserver
   type: NodePort
