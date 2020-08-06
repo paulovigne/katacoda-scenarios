@@ -1,7 +1,8 @@
 
 ### Realizando um Deployment
 
-```apiVersion: apps/v1
+```
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: webserver
@@ -22,7 +23,7 @@ spec:
         image: bitnami/nginx:1.18
         ports:
         - containerPort: 8080
-```{{copy}}
+```
 
 `kubectl apply -f ./manifestos/webserver-deployment.yaml`{{execute}}
 
