@@ -1,0 +1,13 @@
+{
+  "title": "Teste",
+  "description": "Teste",
+  "courses": [
+    {
+      "pathway_id": "paulo",
+      "title": "K8S Basico",
+      "id": "k8s-basico",
+      "course_id": "k8s-basico",
+      "description": "Treinamento Basico K8S"
+    }
+  ]
+}
