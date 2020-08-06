@@ -1,10 +1,8 @@
-## Comandos Básicos do Cluster
-
 ### Obtendo a Versão do Cluster
 
-`kubectl version`{{execute}
+`kubectl version`{{execute}}
 
-`kubectl cluster-info`{{execute}
+`kubectl cluster-info`{{execute}}
 
 ### Obtendo os Nodes:
 
@@ -18,15 +16,4 @@
 
 `kubectl get namespaces`{{execute}}
 
-###
-
-
-
-
-
-`kubectl get nodes`{{copy}}
-`kubectl get nodes`{{execute}}
-
-NodePort: https://[[HOST_SUBDOMAIN]]-31080-[[KATACODA_HOST]].environments.katacoda.com/
-
-Ingress: https://[[HOST_SUBDOMAIN]]-30080-[[KATACODA_HOST]].environments.katacoda.com/
+`kubectl describe ns default`{{execute}}

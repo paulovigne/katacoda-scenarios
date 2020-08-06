@@ -6,7 +6,7 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Comandos Básicos do Cluster",
         "courseData": "step1-background.sh",
         "text": "step1.md"
       },
