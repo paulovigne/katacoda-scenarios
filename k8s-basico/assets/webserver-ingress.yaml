@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: webserver
+  name: webserver
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: webserver
+          servicePort: 8080
+        path: /
