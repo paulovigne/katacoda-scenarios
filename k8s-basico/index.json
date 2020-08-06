@@ -28,6 +28,10 @@
       {
         "title": "Step 6",
         "text": "step6.md"
+      },
+      {
+        "title": "Step 7",
+        "text": "step7.md"
       }
     ],
     "intro": {
@@ -39,8 +43,32 @@
     "assets": {
       "host01": [
         {
-          "file": "webserver.yaml",
-          "target": "y"
+          "file": "webserver-deployment.yaml",
+          "target": "manifestos"
+        },
+        {
+          "file": "webserver-deployment-cm.yaml",
+          "target": "manifestos"
+        },
+        {
+          "file": "webserver-configmap.yaml",
+          "target": "manifestos"
+        },
+        {
+          "file": "webserver-ingress.yaml",
+          "target": "manifestos"
+        },
+        {
+          "file": "webserver-service.yaml",
+          "target": "manifestos"
+        },
+        {
+          "file": "webserver-service-np.yaml",
+          "target": "manifestos"
+        },
+        {
+          "file": "install-ingress.yaml",
+          "target": "manifestos"
         }
       ]
     }
