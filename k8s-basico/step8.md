@@ -1,11 +1,11 @@
 
-### Realizando um Deployment de um StatefulSet
+### Realizando um Deployment WordPress
 
 ```
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
-  name: wordpress-mysql
+  name: wordpress
   namespace: wordpress
   labels:
     app: wordpress
@@ -13,80 +13,96 @@ spec:
   selector:
     matchLabels:
       app: wordpress
-      tier: mysql
-  serviceName: "wordpress-mysql"
+      tier: frontend
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
         app: wordpress
-        tier: db
+        tier: frontend
     spec:
       containers:
-      - image: mysql:5.6
-        name: mysql
+      - image: wordpress:5.4-php7.2-apache
+        name: wordpress
         env:
-        - name: MYSQL_ROOT_PASSWORD
+        - name: WORDPRESS_DB_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mysql-pass
               key: password
-        - name: MYSQL_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-pass
-              key: password
-        - name: MYSQL_USER
+        - name: WORDPRESS_DB_USER
           valueFrom:
             configMapKeyRef:
               name: mysql-param
               key: username
-        - name: MYSQL_DATABASE
+        - name: WORDPRESS_DB_NAME
           valueFrom:
             configMapKeyRef:
               name: mysql-param
               key: database
+        - name: WORDPRESS_DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-param
+              key: hostname
         ports:
-        - containerPort: 3306
-          name: mysql
+        - containerPort: 80
+          name: wordpress
 ```
 
-`kubectl apply -f ./manifestos/wordpress-statefulset.yaml`{{execute}}
+`kubectl apply -f ./manifestos/wordpress-deployment.yaml`{{execute}}
 
 ### Verificando o Deployment:
 
-`kubectl -n wordpress rollout status statefulset wordpress-mysql`{{execute}}
+`kubectl -n wordpress get pods -l tier=frontend`{{execute}}
 
-`kubectl -n wordpress get statefulsets`{{execute}}
-
-`kubectl -n wordpress describe statefulset wordpress-mysql`{{execute}}
-
-`kubectl -n wordpress get pods -l tier=db`{{execute}}
-
-`kubectl -n wordpress logs wordpress-mysql-0 --tail=10 -f`{{execute}}
-
-`kubectl -n wordpress exec -it wordpress-mysql-0 -- bash`{{execute}}
-
-### Criando um Headless Service:
+### Criando Service ClusterIP:
 
 ```
 apiVersion: v1
 kind: Service
 metadata:
-  name: wordpress-mysql
+  name: wordpress
   namespace: wordpress
   labels:
     app: wordpress
 spec:
   ports:
-    - port: 3306
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
   selector:
     app: wordpress
-    tier: db
-  clusterIP: None
+    tier: frontend
+  type: ClusterIP
 ```
 
-`kubectl apply -f ./manifestos/wordpress-service-mysql.yaml`{{execute}}
+`kubectl apply -f ./manifestos/wordpress-service.yaml`{{execute}}
 
 ### Verificando o Serviço
 
 `kubectl -n wordpress get svc`{{execute}}
+
+### Criando o Ingress
+
+```
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: wordpress
+  name: wordpress
+  namespace: wordpress
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: wordpress
+          servicePort: 80
+        path: /
+```
+
+`kubectl apply -f ./manifestos/wordpress-ingress.yaml`{{execute}}
