@@ -1,5 +1,7 @@
 echo "Verificando o Deploy do Ingress Controller"
 
+kubectl apply -f ./manifestos/install-ingress.yaml
+
 result=1
 while [ $result -ne 0 ]
     do
