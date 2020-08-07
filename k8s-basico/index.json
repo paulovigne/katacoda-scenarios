@@ -8,6 +8,7 @@
       {
         "title": "Cluster Kubernetes",
         "courseData": "step1-background.sh",
+        "code": "step1-foreground.sh",
         "text": "step1.md"
       },
       {
