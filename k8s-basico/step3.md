@@ -23,7 +23,7 @@ spec:
 
 `kubectl apply -f ./manifestos/webserver-service-np.yaml`{{execute}}
 
-NodePort: https://[[HOST_SUBDOMAIN]]-31080-[[KATACODA_HOST]].environments.katacoda.com/
+[Acesso ao Site por NodePort](https://[[HOST_SUBDOMAIN]]-31080-[[KATACODA_HOST]].environments.katacoda.com/)
 
 ### Verificando o Service:
 

@@ -20,7 +20,7 @@ spec:
 
 `kubectl apply -f ./manifestos/webserver-ingress.yaml`{{execute}}
 
-Ingress: https://[[HOST_SUBDOMAIN]]-30080-[[KATACODA_HOST]].environments.katacoda.com/
+[Acesso ao Site por Ingress](https://[[HOST_SUBDOMAIN]]-30080-[[KATACODA_HOST]].environments.katacoda.com/)
 
 ### Verificando o Service:
 
