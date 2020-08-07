@@ -11,7 +11,7 @@
         "text": "step1.md"
       },
       {
-        "title": "Deployment",
+        "title": "Deployments",
         "text": "step2.md"
       },
       {
@@ -31,8 +31,12 @@
         "text": "step6.md"
       },
       {
-        "title": "Step 7",
+        "title": "StatefulSets",
         "text": "step7.md"
+      },
+      {
+        "title": "WordPress",
+        "text": "step8.md"
       }
     ],
     "intro": {
@@ -75,6 +79,26 @@
           "file": "wordpress-secret.yaml",
           "target": "manifestos"
         }, 
+        {
+          "file": "wordpress-statefulset.yaml",
+          "target": "manifestos"
+        }, 
+        {
+          "file": "wordpress-service-mysql.yaml",
+          "target": "manifestos"
+        },
+        {
+          "file": "wordpress-deployment.yaml",
+          "target": "manifestos"
+        },
+        {
+          "file": "wordpress-service.yaml",
+          "target": "manifestos"
+        },
+        {
+          "file": "wordpress-ingress.yaml",
+          "target": "manifestos"
+        },
         {
           "file": "install-ingress.yaml",
           "target": "manifestos"

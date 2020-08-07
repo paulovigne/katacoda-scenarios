@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: wordpress
-      tier: mysql
+      tier: db
   serviceName: "wordpress-mysql"
   template:
     metadata:

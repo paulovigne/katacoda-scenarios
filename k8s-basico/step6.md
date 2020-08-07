@@ -48,7 +48,7 @@ metadata:
 ```
 `kubectl apply -f ./manifestos/wordpress-configmap.yaml`{{execute}}
 
-### Verificando a Secret
+### Verificando o ConfigMap
 
 `kubectl -n wordpress get cm`{{execute}}
 
