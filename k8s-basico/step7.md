@@ -62,9 +62,22 @@ spec:
 
 `kubectl -n wordpress get pods -l tier=db`{{execute}}
 
+### Verificando os logs do MySQL:
+
 `kubectl -n wordpress logs wordpress-mysql-0 --tail=10 -f`{{execute}}
 
+* Digite Ctrl + C para sair, pois estamos com o -f habilitado (follow).
+
+### Acessando o POD do MySQL:
+
 `kubectl -n wordpress exec -it wordpress-mysql-0 -- bash`{{execute}}
+
+* Para acessar o console do MySQL digite: `mysql -u root -pPassWord00`{{execute}}
+* Liste os Bancos: `show databases;`{{execute}}
+* Acesso um Banco: `use wordpress;`{{execute}}
+* Liste as Tabelas: `show tables;`{{execute}}
+* Para Sair: `quit`{{execute}}
+* Estamos dentro do pod para sair digite `exit`{{execute}}
 
 ### Criando um Headless Service:
 
