@@ -1,4 +1,4 @@
-echo "Aguardando o Deploy do Cluster"
+echo "Verificando o Deploy do Ingress Controller"
 
 result=1
 while [ $result -ne 0 ]
