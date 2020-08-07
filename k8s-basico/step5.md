@@ -70,4 +70,4 @@ Ingress: https://[[HOST_SUBDOMAIN]]-30080-[[KATACODA_HOST]].environments.katacod
 
 ### Verificando os Logs
 
-`kubectl logs <nomedopod> --tail =10 -f`{{copy}}
+`kubectl logs <nomedopod> --tail=10 -f`{{copy}}
