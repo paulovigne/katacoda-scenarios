@@ -3,10 +3,11 @@ echo "Aguardando o Deploy do Cluster"
 result=1
 while [ $result -ne 0 ]
     do
+        sleep 10
         kubectl get ns ingress-nginx
         if [ $? -eq 0 ]
             then
-                result="0"
+                result=0
             fi
     done
 
