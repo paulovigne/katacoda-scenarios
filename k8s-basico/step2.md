@@ -39,7 +39,7 @@ spec:
 
 `kubectl get pods`{{execute}}
 
-### Obtendo os Namespaces:
+### Escalando um Deployment:
 
 `kubectl scale deployment webserver --replicas=3`{{execute}}
 
