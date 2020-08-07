@@ -1,5 +1,5 @@
 
-### Criando um Ingress
+### Criando ConfigMap
 
 ```
 apiVersion: v1
@@ -22,6 +22,12 @@ metadata:
 ```
 
 `kubectl apply -f ./manifestos/webserver-configmap.yaml`{{execute}}
+
+### Verificando o ConfgMap
+
+`kubectl get configmap`{{execute}}
+
+`kubectl describe cm welcome`{{execute}}
 
 ### Modificando o Deployment
 

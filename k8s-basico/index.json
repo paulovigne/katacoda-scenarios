@@ -27,7 +27,7 @@
         "text": "step5.md"
       },
       {
-        "title": "Step 6",
+        "title": "Secrets",
         "text": "step6.md"
       },
       {
@@ -67,6 +67,14 @@
           "file": "webserver-service-np.yaml",
           "target": "manifestos"
         },
+        {
+          "file": "wordpress-configmap.yaml",
+          "target": "manifestos"
+        },
+        {
+          "file": "wordpress-secret.yaml",
+          "target": "manifestos"
+        }, 
         {
           "file": "install-ingress.yaml",
           "target": "manifestos"
