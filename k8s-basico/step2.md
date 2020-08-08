@@ -7,7 +7,7 @@ kind: Deployment
 metadata:
   name: webserver
   labels:
-    app: nginx
+    app: webserver
 spec:
   replicas: 1
   selector:

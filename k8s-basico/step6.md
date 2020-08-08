@@ -38,7 +38,8 @@ data:
 apiVersion: v1
 data:
   hostname: wordpress-mysql
-  username: wordpress_user 
+  username: wp_user
+  database: wordpress
 kind: ConfigMap
 metadata:
   name: mysql-param
@@ -46,6 +47,7 @@ metadata:
   labels:
     app: wordpress
 ```
+
 `kubectl apply -f ./manifestos/wordpress-configmap.yaml`{{execute}}
 
 ### Verificando o ConfigMap
