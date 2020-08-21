@@ -2,7 +2,7 @@
   "title": "K8S Basico",
   "description": "Treinamento Basico de Kubernetes",
   "difficulty": "Beginner",
-  "time": "2 hours",
+  "time": "1 hour",
   "details": {
     "steps": [
       {
@@ -111,6 +111,6 @@
     "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.18"
+    "imageid": "kubernetes-cluster-running"
   }
 }
