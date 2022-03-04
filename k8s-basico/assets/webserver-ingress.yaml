@@ -6,7 +6,7 @@ metadata:
   name: webserver
 spec:
   rules:
-  - host: ${HOST_ING}
+  - host: webserver.${KATAKODA_LB}
     http:
       paths:
       - backend:
