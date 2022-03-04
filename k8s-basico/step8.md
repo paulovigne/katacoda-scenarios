@@ -50,14 +50,15 @@ spec:
         - containerPort: 80
           name: wordpress
 ```
+##### Fazendo o Deploy do POD WordPress, repare os ConfigMaps e Secrets como variaveis de ambiente
 
 `kubectl apply -f ./manifestos/wordpress-deployment.yaml`{{execute}}
 
-### Verificando o Deployment:
+##### Verificando o Deployment:
 
 `kubectl -n wordpress get pods -l tier=frontend`{{execute}}
 
-### Criando Service ClusterIP:
+##### Criando Service ClusterIP:
 
 ```
 apiVersion: v1
@@ -81,11 +82,11 @@ spec:
 
 `kubectl apply -f ./manifestos/wordpress-service.yaml`{{execute}}
 
-### Verificando o Serviço
+##### Verificando o Serviço
 
 `kubectl -n wordpress get svc`{{execute}}
 
-### Criando o Ingress
+##### Criando o Ingress
 
 ```
 apiVersion: extensions/v1beta1
@@ -106,15 +107,15 @@ spec:
         path: /
 ```
 
-#### Obtendo o Nome do Balanceador do Katacoda:
+##### Obtendo o Nome do Balanceador do Katacoda:
 `export KATACODA_LB=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
-#### Substituindo o Balanceador no Manifesto:
+##### Substituindo o Balanceador no Manifesto:
 `envsubst < ./manifestos/wordpress-ingress.yaml | kubectl apply -f -`{{execute}}
 
-#### Repare que agora existem dois ingresses no mesmo balanceador:
+##### Repare que agora existem dois ingresses no mesmo balanceador:
 `kubectl get ingress -A`{{execute}}
 
-### Testando
+##### Testando
 
 [Acesso ao Site por Ingress](https://wordpress.[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/)
