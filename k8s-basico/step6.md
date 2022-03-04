@@ -26,13 +26,13 @@ data:
 
 `kubectl apply -f ./manifestos/wordpress-secret.yaml`{{execute}}
 
-### Verificando a Secret
+##### Verificando a Secret
 
 `kubectl -n wordpress get secrets`{{execute}}
 
 `kubectl -n wordpress describe secret mysql-pass`{{execute}}
 
-### ConfigMap como variável de ambiente
+##### ConfigMap como variável de ambiente
 
 ```
 apiVersion: v1
@@ -50,7 +50,7 @@ metadata:
 
 `kubectl apply -f ./manifestos/wordpress-configmap.yaml`{{execute}}
 
-### Verificando o ConfigMap
+##### Verificando o ConfigMap
 
 `kubectl -n wordpress get cm`{{execute}}
 
