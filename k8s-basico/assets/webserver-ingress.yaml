@@ -6,7 +6,8 @@ metadata:
   name: webserver
 spec:
   rules:
-  - http:
+  - host: ${HOST_ING}
+    http:
       paths:
       - backend:
           serviceName: webserver
