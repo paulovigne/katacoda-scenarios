@@ -10,7 +10,8 @@ metadata:
   name: webserver
 spec:
   rules:
-  - http:
+  - host: webserver.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
+    http:
       paths:
       - backend:
           serviceName: webserver
@@ -18,9 +19,11 @@ spec:
         path: /
 ```
 
-`kubectl apply -f ./manifestos/webserver-ingress.yaml`{{execute}}
+`export HOST_ING=webserver.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
-[Acesso ao Site por Ingress](https://[[HOST_SUBDOMAIN]]-30080-[[KATACODA_HOST]].environments.katacoda.com/)
+`envsubst < ./manifestos/webserver-ingress.yaml | kubectl apply -f -`{{execute}}
+
+[Acesso ao Site por Ingress](https://webserver.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/)
 
 ### Verificando o Service:
 
