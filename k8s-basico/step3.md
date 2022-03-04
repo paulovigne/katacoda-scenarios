@@ -21,11 +21,13 @@ spec:
   type: NodePort
 ```
 
+##### Aplicando o Manifesto do Service NodePort:
+
 `kubectl apply -f ./manifestos/webserver-service-np.yaml`{{execute}}
 
 [Acesso ao Site por NodePort](https://[[HOST_SUBDOMAIN]]-31080-[[KATACODA_HOST]].environments.katacoda.com/)
 
-### Verificando o Service:
+##### Verificando o Service:
 
 `kubectl get services`{{execute}}
 
@@ -54,10 +56,11 @@ spec:
     app: webserver
   type: ClusterIP
 ```
-
-### Verificando o Service:
+##### Aplicando o Manifesto do Service ClusterIP:
 
 `kubectl apply -f ./manifestos/webserver-service.yaml`{{execute}}
+
+##### Verificando o Service:
 
 `kubectl get services`{{execute}}
 
