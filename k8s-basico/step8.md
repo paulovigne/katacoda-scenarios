@@ -97,7 +97,8 @@ metadata:
   namespace: wordpress
 spec:
   rules:
-  - http:
+  - host: wordpress.${KATACODA_LB}
+    http:
       paths:
       - backend:
           serviceName: wordpress
@@ -105,14 +106,12 @@ spec:
         path: /
 ```
 
-`kubectl apply -f ./manifestos/wordpress-ingress.yaml`{{execute}}
+#### Obtendo o Nome do Balanceador do Katacoda:
+`export KATACODA_LB=[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+
+#### Substituindo o Balanceador no Manifesto:
+`envsubst < ./manifestos/wordpress-ingress.yaml | kubectl apply -f -`{{execute}}
 
 ### Testando
 
-[Acesso ao Site por Ingress](https://[[HOST_SUBDOMAIN]]-30080-[[KATACODA_HOST]].environments.katacoda.com/)
-
-* Como não temos DNS customizável, nosso ingress sempre aponta para "all hosts" ( * ), ou seja, o ingress do exercício anterior está sobrepondo o atual, para concluir este exercício, remova o ingress webserver do namespace default.
-
-`kubectl delete ingress webserver -n default`{{execute}}
-
-* Teste novamente o acesso e verifique se o WordPress irá abrir.
+[Acesso ao Site por Ingress](https://wordpress.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/)
