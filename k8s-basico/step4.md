@@ -19,15 +19,15 @@ spec:
         path: /
 ```
 
-#### Obtendo o Nome do Balanceador do Katacoda:
+##### Obtendo o Nome do Balanceador do Katacoda:
 `export KATACODA_LB=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
 
-#### Substituindo o Balanceador no Manifesto:
+##### Substituindo o Balanceador no Manifesto:
 `envsubst < ./manifestos/webserver-ingress.yaml | kubectl apply -f -`{{execute}}
 
 [Acesso ao Site por Ingress](https://webserver.[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/)
 
-### Verificando o Service:
+#### Verificando o Ingress:
 
 `kubectl get ingress`{{execute}}
 
