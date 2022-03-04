@@ -7,7 +7,7 @@ metadata:
   namespace: wordpress
 spec:
   rules:
-  - host: wordpress.${KATAKODA_LB}
+  - host: wordpress.${KATACODA_LB}
     http:
       paths:
       - backend:
