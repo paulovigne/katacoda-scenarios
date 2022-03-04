@@ -66,7 +66,7 @@ spec:
 ```
 `kubectl apply -f ./manifestos/webserver-deployment-cm.yaml`{{execute}}
 
-[Acesso ao Site por Ingress](https://[[HOST_SUBDOMAIN]]-30080-[[KATACODA_HOST]].environments.katacoda.com/)
+[Acesso ao Site por Ingress](https://[[HOST2_SUBDOMAIN]]-30080-[[KATACODA_HOST]].environments.katacoda.com/)
 
 ### Acessando o POD:
 
