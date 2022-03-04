@@ -7,7 +7,7 @@
     "steps": [
       {
         "title": "Cluster Kubernetes",
-        "courseData": "step1-background.sh",
+        "code": "step1-background.sh",
         "text": "step1.md"
       },
       {
@@ -20,7 +20,6 @@
       },
       {
         "title": "Ingress",
-        "code": "step4-foreground.sh",
         "text": "step4.md"
       },
       {
