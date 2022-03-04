@@ -7,7 +7,7 @@ data:
   index.html: |
     <hr /><table style="margin-left: auto; margin-right: auto;">
     <tbody><tr>
-    <td style="text-align: center;">DEAT - TESTE</td>
+    <td style="text-align: center;">WEBSERVER - TESTE</td>
     </tr><tr><td>
     <h1><span style="color: #3366ff;"><strong>Teste do K8S Lab</strong></span></h1>
     </td></tr><tr>
@@ -20,16 +20,17 @@ metadata:
   labels:
     app: webserver
 ```
+##### Aplicando o Manifesto do ConfgMap
 
 `kubectl apply -f ./manifestos/webserver-configmap.yaml`{{execute}}
 
-### Verificando o ConfgMap
+##### Verificando o ConfgMap
 
 `kubectl get configmap`{{execute}}
 
 `kubectl describe cm welcome`{{execute}}
 
-### Modificando o Deployment
+##### Modificando o Deployment
 
 ```
 apiVersion: apps/v1
@@ -64,16 +65,18 @@ spec:
           optional: false
         name: welcome
 ```
+##### Aplicando o Manifesto com o ConfigMap Montado como Volume
+
 `kubectl apply -f ./manifestos/webserver-deployment-cm.yaml`{{execute}}
 
 [Acesso ao Site por Ingress](https://[[HOST2_SUBDOMAIN]]-30080-[[KATACODA_HOST]].environments.katacoda.com/)
 
-### Acessando o POD:
+##### Acessando o POD:
 
 `kubectl get pods`{{execute}}
 
 `kubectl exec -it <nomedopod> -- bash`{{copy}}
 
-### Verificando os Logs
+##### Verificando os Logs
 
 `kubectl logs <nomedopod> --tail=10 -f`{{copy}}
