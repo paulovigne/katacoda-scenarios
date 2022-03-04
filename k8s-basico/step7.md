@@ -50,9 +50,11 @@ spec:
           name: mysql
 ```
 
+#### Aplicando o Statefulset, repare no uso das secrets como variáveis em env/secretKeyRef
+
 `kubectl apply -f ./manifestos/wordpress-statefulset.yaml`{{execute}}
 
-### Verificando o Deployment:
+##### Verificando o Deployment:
 
 `kubectl -n wordpress rollout status statefulset wordpress-mysql`{{execute}}
 
@@ -62,13 +64,13 @@ spec:
 
 `kubectl -n wordpress get pods -l tier=db`{{execute}}
 
-### Verificando os logs do MySQL:
+##### Verificando os logs do MySQL:
 
 `kubectl -n wordpress logs wordpress-mysql-0 --tail=10 -f`{{execute}}
 
 * Digite Ctrl + C para sair, pois estamos com o -f habilitado (follow).
 
-### Acessando o POD do MySQL:
+##### Acessando o POD do MySQL:
 
 `kubectl -n wordpress exec -it wordpress-mysql-0 -- bash`{{execute}}
 
@@ -79,7 +81,7 @@ spec:
 * Para Sair: `quit`{{execute}}
 * Estamos dentro do pod para sair digite `exit`{{execute}}
 
-### Criando um Headless Service:
+##### Criando um Headless Service:
 
 ```
 apiVersion: v1
@@ -100,6 +102,6 @@ spec:
 
 `kubectl apply -f ./manifestos/wordpress-service-mysql.yaml`{{execute}}
 
-### Verificando o Serviço
+##### Verificando o Serviço
 
 `kubectl -n wordpress get svc`{{execute}}
