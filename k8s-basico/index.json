@@ -7,7 +7,7 @@
     "steps": [
       {
         "title": "Cluster Kubernetes",
-        "code": "step1-background.sh",
+        "code": "step1-foreground.sh",
         "text": "step1.md"
       },
       {
