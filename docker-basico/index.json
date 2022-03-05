@@ -1,0 +1,67 @@
+{
+  "title": "Docker Basico",
+  "description": "Treinamento Basico de Docker",
+  "difficulty": "Beginner",
+  "time": "1 hour",
+  "details": {
+    "steps": [
+      {
+        "title": "Docker",
+        "text": "step1.md"
+      },
+      {
+        "title": "Imagem",
+        "text": "step2.md"
+      },
+      {
+        "title": "Parametros",
+        "text": "step3.md"
+      },
+      {
+        "title": "Logs",
+        "text": "step4.md"
+      },
+      {
+        "title": "Variaveis",
+        "text": "step5.md"
+      },
+      {
+        "title": "Build",
+        "text": "step6.md"
+      },
+      {
+        "title": "Registry",
+        "text": "step7.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "app.py",
+          "target": "build"
+        },
+        {
+          "file": "Dockerfile",
+          "target": "build"
+        },
+        {
+          "file": "index.html",
+          "target": "data"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "hideintro": true,
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu:1804"
+  }
+}
