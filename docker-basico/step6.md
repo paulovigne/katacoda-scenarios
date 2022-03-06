@@ -5,15 +5,15 @@ Vamos agora criar uma aplicação bem simples em python utilizando o Flask, esta
 
 ##### A aplicação app.py
 
-`cat ./build/app.py`{{execute}}
+`cat ~/build/app.py`{{execute}}
 
 ##### O Dockerfile
 
-`cat ./build/Dockerfile`{{execute}}
+`cat ~/build/Dockerfile`{{execute}}
 
 ##### Iniciando o processo de build
 
-`docker build -t flask-app build/.`{{execute}}
+`docker build -t flask-app ~/build/.`{{execute}}
 
 ##### Verificando a imagem gerada
 

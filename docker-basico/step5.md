@@ -13,10 +13,6 @@ Veja a app [fundo_azul](https://[[HOST_SUBDOMAIN]]-8081-[[KATACODA_HOST]].enviro
 #### Persistindo dados por volumes
 Como já sabemos, containers são efêmeros, não persistem dados caso sejam removidos, para isso podemos mapear volumes no host ou até remotamente.
 
-##### Vamos criar localmente um diretório para os arquivos html do servidor web Nginx:
-
-`mkdir -p ~/volume/nginx`{{execute}}
-
 ##### Dentro do diretório verifique o seguinte arquivo:
 
 `cat ~/volume/index.html`{{execute}}
@@ -41,4 +37,4 @@ Experimente alterar o arquivo no hospedeiro e visualizar a [aplicação](https:/
 
 `docker stop nginx`{{execute}}
 
-`docker ps -a`{{execute}}
+`docker ps`{{execute}}

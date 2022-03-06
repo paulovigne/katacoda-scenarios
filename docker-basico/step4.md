@@ -18,3 +18,11 @@
 ##### No sistema operacional: 
 
 `ip a`{{execute}}
+
+##### Vamos parar novamente o container:
+
+`docker stop nginx`{{execute}}
+
+Repare que desta vez com o parâmetro "--rm", ao dar stop, o docker automaticamente removeu o container.
+
+`docker ps -a`{{execute}}

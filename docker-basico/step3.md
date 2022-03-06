@@ -16,7 +16,7 @@ Parâmetro  | Descrição
 -i | Mantem o STDIN
 -t | Aloca um pseudo TTY
 
-Ao executar o comando, somos transferidos para dentro do shell do container, e estamos isolados do sistema operacional hospedeiros, e ao sair, o container entra em estado de stop.
+Ao executar o comando, somos transferidos para dentro do shell do container, e estamos isolados do sistema operacional hospedeiros, e ao sair, o container entra em estado de stop. para sair digite `exit`{{execute}} e de enter.
 
 Para ver o container em estado de stop é necessário adicionar o parâmetro "-a":
 
@@ -78,11 +78,3 @@ Caso deseje apenas iniciar novamente o container, execute `docker start nginx`{{
 `curl 127.0.0.1:80`{{execute}}
 
 ou pelo link do [host](https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/)
-
-##### Vamos parar novamente o container:
-
-`docker stop nginx`{{execute}}
-
-Repare que desta vez com o parâmetro "--rm", ao dar stop, o docker automaticamente removeu o container.
-
-`docker ps -a`{{execute}}

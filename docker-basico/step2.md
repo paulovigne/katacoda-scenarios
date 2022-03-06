@@ -14,7 +14,7 @@ Imagem do [nginx](https://hub.docker.com/_/nginx):
 * O Comando "run" por si só já efetua o pull caso a imagem não exista no host.
 
 ##### Porque o shell ficou preso?
-Para responder esta questão, vamos antes executar a aplicação "httping", que é uma ferramenta simples para teste de URLs.
+Bom "Ctrl+C" para sair! Para responder esta questão, vamos antes executar a aplicação "httping", que é uma ferramenta simples para teste de URLs.
 
 `docker run bretfisher/httping`{{execute}}
 
@@ -22,7 +22,7 @@ Repare que foi retornado a versão da ferramenta e logo largou o shell.
 
 `docker run bretfisher/httping google.com`{{execute}}
 
-Agora o comando predendeu o shell em execução, isso deve-se por conta de como o ENTRYPOINT e o CMD do Dockerfile da imagem é definido.
+Agora o comando predendeu o shell em execução, isso deve-se por conta de como o ENTRYPOINT e o CMD do Dockerfile da imagem foi definido.
 
 ##### ENTRYPOINT vs CMD
 Em um Dockerfile, podemos ter um ou outro ou ambos.
