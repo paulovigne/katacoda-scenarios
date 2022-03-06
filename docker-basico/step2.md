@@ -1,5 +1,6 @@
 
-### Rodando uma Imagem
+
+##### Rodando uma Imagem
 
 ##### Baixando uma imagem
 Imagem do [nginx](https://hub.docker.com/_/nginx):
@@ -15,7 +16,7 @@ Imagem do [nginx](https://hub.docker.com/_/nginx):
 ##### Porque o shell ficou preso?
 Para responder esta questão, vamos antes executar a aplicação "httping", que é uma ferramenta simples para teste de URLs.
 
-`docker run bretfisher/httping` {{execute}}
+`docker run bretfisher/httping`{{execute}}
 
 Repare que foi retornado a versão da ferramenta e logo largou o shell.
 
@@ -23,7 +24,7 @@ Repare que foi retornado a versão da ferramenta e logo largou o shell.
 
 Agora o comando predendeu o shell em execução, isso deve-se por conta de como o ENTRYPOINT e o CMD do Dockerfile da imagem é definido.
 
-### ENTRYPOINT vs CMD
+##### ENTRYPOINT vs CMD
 Em um Dockerfile, podemos ter um ou outro ou ambos.
 
 Vamos primeiro ver o [Dockerfile](https://github.com/nginxinc/docker-nginx/blob/master/mainline/debian/Dockerfile) do Nginx, procure no final do arquivo por ENTRYPOINT, veja que o aquivo [docker-entrypoint.sh](https://github.com/nginxinc/docker-nginx/blob/master/mainline/debian/docker-entrypoint.sh) é referenciado e no final dele temos '"exec "$@"' que absorve todos os parâmetros do CMD do Dockerfile, que é em si a chamada da daemom do Nginx Server que de fato prendeu o shell.

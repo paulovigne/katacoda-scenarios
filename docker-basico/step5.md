@@ -1,6 +1,4 @@
 
-### Variáveis e Volumes
-
 #### Passando variáveis para o container
 Vamos criar dois containers com a imagem de teste "simple-webapp-color" observe no comando o parâmetro "-e APP_COLOR=", respectivamente irão rodar dois containers rosa e azul nas portas 8080 e 8081 para não ocorrer conflito de portas no hospedeiro:
 
@@ -19,19 +17,15 @@ Como já sabemos, containers são efêmeros, não persistem dados caso sejam rem
 
 `mkdir -p ~/volume/nginx`{{execute}}
 
-##### Dentro do diretório vamos colocar o seguinte arquivo:
+##### Dentro do diretório verifique o seguinte arquivo:
 
-`cat > ~/volume/nginx/index.html <<EOF
-<html>
-<h1> Testando Volume ... </h1>
-</html>
-EOF`{{execute}}
+`cat ~/volume/index.html`{{execute}}
 
 ##### Mapeando o Volume
 
 O Parâmetro "-v" irá fazer a ligação do volume local com o diretório dentro do container (vide documentação da imagem):
 
-`docker run --rm --name nginx -d -p 80:80 -v ~/volume/nginx:/usr/share/nginx/html nginx`{{execute}}
+`docker run --rm --name nginx -d -p 80:80 -v ~/volume:/usr/share/nginx/html nginx`{{execute}}
 
 Experimente alterar o arquivo no hospedeiro e visualizar a [aplicação](https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/)
 

@@ -1,6 +1,4 @@
 
-### Alguns parâmetros do Docker
-
 ##### Baixando uma imagem
 Imagem do [ubuntu](https://hub.docker.com/_/ubuntu):
 

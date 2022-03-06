@@ -1,6 +1,4 @@
 
-### Docker Registry
-
 ##### Instanciando um Docker Registry
 
 Vamos agora criar um docker registry local utilizando a [imagem oficial](https://hub.docker.com/_/registry) do docker, o registry possui inúmeras [configurações](https://docs.docker.com/registry/configuration/), como por exemplo autenticação via token, persistencia em bucket S3, aqui iremos configurar tudo de maneira simples apenas para provar o conceito.

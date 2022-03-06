@@ -1,6 +1,4 @@
 
-### Ambiente Docker
-
 ##### Obtendo do Ambiente
 
 `docker info`{{execute}}

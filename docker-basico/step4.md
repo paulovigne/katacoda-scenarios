@@ -1,6 +1,4 @@
 
-### Logs e Inspeção 
-
 ##### Extraindo o Log de um container
 `docker logs nginx --tail 10 -f`{{execute}}
 

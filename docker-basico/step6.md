@@ -1,5 +1,5 @@
 
-### Criando uma imagem
+##### Criando uma imagem
 
 Vamos agora criar uma aplicação bem simples em python utilizando o Flask, esta aplicação posuirá um único arquivo chamado "app.py" e seu Dockerfile com as instruções de build.
 

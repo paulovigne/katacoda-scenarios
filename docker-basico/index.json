@@ -6,23 +6,23 @@
   "details": {
     "steps": [
       {
-        "title": "Docker",
+        "title": "Ambiente Docker",
         "text": "step1.md"
       },
       {
-        "title": "Imagem",
+        "title": "Imagens Docker",
         "text": "step2.md"
       },
       {
-        "title": "Parametros",
+        "title": "Alguns Parâmetros do Docker",
         "text": "step3.md"
       },
       {
-        "title": "Logs",
+        "title": "Logs e Inspeção",
         "text": "step4.md"
       },
       {
-        "title": "Variaveis",
+        "title": "Variáveis e Volumes",
         "text": "step5.md"
       },
       {
@@ -30,7 +30,7 @@
         "text": "step6.md"
       },
       {
-        "title": "Registry",
+        "title": "Docker Registry",
         "text": "step7.md"
       }
     ],
@@ -52,13 +52,12 @@
         },
         {
           "file": "index.html",
-          "target": "data"
+          "target": "volume"
         }
       ]
     }
   },
   "environment": {
-    "hideintro": true,
     "uilayout": "terminal"
   },
   "backend": {
