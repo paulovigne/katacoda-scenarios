@@ -1,4 +1,4 @@
-### Bem ao Treinamento de Docker
+### Bem Vindo ao Treinamento de Docker
 
 Neste treinamento aprenderemos a utilizar funções básicas do Docker, como por exemplo:
 
