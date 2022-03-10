@@ -1,7 +1,3 @@
-
-
-##### Rodando uma Imagem
-
 ##### Baixando uma imagem
 Imagem do [nginx](https://hub.docker.com/_/nginx):
 
