@@ -1,0 +1,39 @@
+{
+  "title": "K8S Playground",
+  "description": "Treinamento Basico de Kubernetes",
+  "difficulty": "Beginner",
+  "time": "1 hour",
+  "details": {
+    "steps": [
+      {
+        "title": "Cluster Kubernetes",
+        "code": "step1-foreground.sh",
+        "text": "step1.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "install-ingress.yaml",
+          "target": "manifestos"
+        },
+        {
+          "file": "ingress.sh",
+          "target": "scripts"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-running:1.18"
+  }
+}

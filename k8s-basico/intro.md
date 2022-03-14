@@ -1,4 +1,4 @@
-### Bem ao Treinamento
+### Bem Vindo ao Treinamento
 
 Neste treinamento aprenderemos a criar e utilizar os seguintes objetos no Kubernetes:
 
