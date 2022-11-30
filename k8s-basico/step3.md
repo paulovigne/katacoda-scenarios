@@ -25,7 +25,7 @@ spec:
 
 `kubectl apply -f ./manifestos/webserver-service-np.yaml`{{execute}}
 
-[Acesso ao Site por NodePort](https://[[HOST_SUBDOMAIN]]-31080-[[KATACODA_HOST]].environments.katacoda.com/)
+[Acesso ao Site por NodePort]({{TRAFFIC_HOST1_31080}})
 
 ##### Verificando o Service:
 
