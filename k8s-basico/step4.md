@@ -23,10 +23,8 @@ spec:
 ```
 
 ##### Obtendo o Nome do Balanceador do Katacoda:
-`KILLERCODA_LB={{TRAFFIC_HOST2_80}} \
-KILLERCODA_LB_ID=$(echo $KILLERCODA_LB | cut -d. -f1) \
-KILLERCODA_LB_SUFIX=$(echo $KILLERCODA_LB | cut -d. -f2-10) \
-export INGRESS_HOST=$KILLERCODA_LB_ID.webserver.$KILLERCODA_LB_SUFIX`{{execute}}
+`KILLERCODA_LB=$(echo {{TRAFFIC_HOST2_80}} | cut -d/ -f3);KILLERCODA_LB_ID=$(echo $KILLERCODA_LB | cut -d. -f1);KILLERCODA_LB_SUFIX=$(echo $KILLERCODA_LB | cut -d. -f2-10);export INGRESS_HOST=$KILLERCODA_LB_ID.webserver.$KILLERCODA_LB_SUFIX
+`{{execute}}
 
 ##### Substituindo o Balanceador no Manifesto:
 `envsubst < ./manifestos/webserver-ingress.yaml | kubectl apply -f -`{{execute}}
