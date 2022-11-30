@@ -124,4 +124,4 @@ spec:
 ##### Testando
 
 ##### Veja no Navegador:
-`echo Digite o Seguinte endereço no Browser: https://${NGRESS_HOST}`{{execute}}
+`echo Digite o Seguinte endereço no Browser: https://${INGRESS_HOST}`{{execute}}
