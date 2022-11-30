@@ -89,7 +89,7 @@ spec:
 ##### Criando o Ingress
 
 ```
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   labels:
@@ -98,17 +98,22 @@ metadata:
   namespace: wordpress
 spec:
   rules:
-  - host: wordpress.${KATACODA_LB}
+  - host: ${INGRESS_HOST}
     http:
       paths:
       - backend:
-          serviceName: wordpress
-          servicePort: 80
+          service:
+            name: wordpress
+            port:
+              number: 80
         path: /
+        pathType: Prefix
 ```
 
+
 ##### Obtendo o Nome do Balanceador do Katacoda:
-`export KATACODA_LB={{TRAFFIC_HOST2_80}}`{{execute}}
+`KILLERCODA_LB=$(echo {{TRAFFIC_HOST2_80}} | cut -d/ -f3);KILLERCODA_LB_ID=$(echo $KILLERCODA_LB | cut -d. -f1);KILLERCODA_LB_SUFIX=$(echo $KILLERCODA_LB | cut -d. -f2-10);export INGRESS_HOST=$KILLERCODA_LB_ID.wordpress.$KILLERCODA_LB_SUFIX
+`{{execute}}
 
 ##### Substituindo o Balanceador no Manifesto:
 `envsubst < ./manifestos/wordpress-ingress.yaml | kubectl apply -f -`{{execute}}
@@ -118,4 +123,5 @@ spec:
 
 ##### Testando
 
-[Acesso ao Site por Ingress](https://wordpress.{{TRAFFIC_HOST2_80}})
+##### Veja no Navegador:
+`echo Digite o Seguinte endereço no Browser: https://${NGRESS_HOST}`{{execute}}
