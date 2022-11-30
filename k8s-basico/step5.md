@@ -69,7 +69,8 @@ spec:
 
 `kubectl apply -f ./manifestos/webserver-deployment-cm.yaml`{{execute}}
 
-[Acesso ao Site por Ingress](https://webserver.{{TRAFFIC_HOST2_80}})
+##### Veja no Navegador:
+`echo Digite o Seguinte endereço no Browser: https://${NGRESS_HOST}`{{execute}}
 
 ##### Acessando o POD:
 
