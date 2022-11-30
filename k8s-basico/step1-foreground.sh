@@ -11,7 +11,14 @@ while [ $(kubectl get node 2>/dev/null | grep Ready | wc -l) -ne 2 ]
 echo
 echo "Verificando o Deploy do Ingress Controller"
 
-kubectl apply -f ./manifestos/install-ingress.yaml
+kubectl create ns ingress-nginx
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm install ingress-nginx ingress-nginx/ingress-nginx \
+  --namespace ingress-nginx
+  --version 4.4.0 \
+  --set controller.hostNetwork=true \
+  --set controller.hostPort.enabled=true \
+  --set controller.service.enabled=false
 
 result=1
 while [ $result -ne 0 ]
