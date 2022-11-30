@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   labels:
@@ -6,10 +6,13 @@ metadata:
   name: webserver
 spec:
   rules:
-  - host: webserver.${KATACODA_LB}
+  - host: ${INGRESS_HOST}
     http:
       paths:
       - backend:
-          serviceName: webserver
-          servicePort: 8080
+          service:
+            name: webserver
+            port:
+              number: 8080
         path: /
+        pathType: Prefix
