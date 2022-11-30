@@ -2,7 +2,7 @@
 ### Criando um Ingress
 
 ```
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   labels:
@@ -10,22 +10,28 @@ metadata:
   name: webserver
 spec:
   rules:
-  - host: webserver.${KATACODA_LB}
+  - host: ${INGRESS_HOST}
     http:
       paths:
       - backend:
-          serviceName: webserver
-          servicePort: 8080
+          service:
+            name: webserver
+            port:
+              number: 8080
         path: /
+        pathType: Prefix
 ```
 
 ##### Obtendo o Nome do Balanceador do Katacoda:
-`export KATACODA_LB={{TRAFFIC_HOST2_80}}`{{execute}}
+`KILLERCODA_LB={{TRAFFIC_HOST2_80}} \
+KILLERCODA_LB_ID=$(echo $KILLERCODA_LB | cut -d. -f1) \
+KILLERCODA_LB_SUFIX=$(echo $KILLERCODA_LB | cut -d. -f2-10) \
+export INGRESS_HOST=$KILLERCODA_LB_ID.webserver.$KILLERCODA_LB_SUFIX`{{execute}}
 
 ##### Substituindo o Balanceador no Manifesto:
 `envsubst < ./manifestos/webserver-ingress.yaml | kubectl apply -f -`{{execute}}
 
-[Acesso ao Site por Ingress](webserver.{{TRAFFIC_HOST2_80}})
+[Acesso ao Site por Ingress](https://$INGRESS_HOST)
 
 #### Verificando o Ingress:
 
