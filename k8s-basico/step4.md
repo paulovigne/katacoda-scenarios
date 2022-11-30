@@ -29,7 +29,8 @@ spec:
 ##### Substituindo o Balanceador no Manifesto:
 `envsubst < ./manifestos/webserver-ingress.yaml | kubectl apply -f -`{{execute}}
 
-[Acesso ao Site por Ingress](https://$INGRESS_HOST)
+##### Veja no Navegador:
+`echo Digite o Seguinte endereço no Browser: https://${NGRESS_HOST}`{{execute}}
 
 #### Verificando o Ingress:
 
