@@ -30,7 +30,7 @@ spec:
 `envsubst < ./manifestos/webserver-ingress.yaml | kubectl apply -f -`{{execute}}
 
 ##### Veja no Navegador:
-`echo Digite o Seguinte endereço no Browser: https://${NGRESS_HOST}`{{execute}}
+`echo Digite o Seguinte endereço no Browser: https://${INGRESS_HOST}`{{execute}}
 
 #### Verificando o Ingress:
 
