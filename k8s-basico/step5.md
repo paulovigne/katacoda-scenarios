@@ -70,7 +70,7 @@ spec:
 `kubectl apply -f ./manifestos/webserver-deployment-cm.yaml`{{execute}}
 
 ##### Veja no Navegador:
-`echo Digite o Seguinte endereço no Browser: https://${NGRESS_HOST}`{{execute}}
+`echo Digite o Seguinte endereço no Browser: https://${INGRESS_HOST}`{{execute}}
 
 ##### Acessando o POD:
 
