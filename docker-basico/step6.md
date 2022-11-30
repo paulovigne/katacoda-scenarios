@@ -30,4 +30,4 @@ Vamos agora criar uma aplicação bem simples em python utilizando o Flask, esta
 
 `curl 127.0.0.1:9090`{{execute}}
 
-ou pelo link do [host](https://[[HOST_SUBDOMAIN]]-9090-[[KATACODA_HOST]].environments.katacoda.com/)
+ou pelo link do [host]({{TRAFFIC_HOST1_9090}})
