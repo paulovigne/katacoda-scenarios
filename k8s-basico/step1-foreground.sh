@@ -16,7 +16,6 @@ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm install ingress-nginx ingress-nginx/ingress-nginx \
   --namespace ingress-nginx \
   --version 4.4.0 \
-  --set controller.hostNetwork=true \
   --set controller.hostPort.enabled=true \
   --set controller.service.enabled=false
 
