@@ -18,7 +18,7 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \
   --version 4.4.0 \
   --set controller.hostPort.enabled=true \
   --set controller.service.enabled=false \
-  --set controller.ingressClassResource.enabled=true 
+  --set controller.ingressClassResource.default=true 
 
 kubectl -n ingress-nginx rollout status deployment ingress-nginx-controller
 
