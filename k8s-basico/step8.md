@@ -108,7 +108,7 @@ spec:
 ```
 
 ##### Obtendo o Nome do Balanceador do Katacoda:
-`export KATACODA_LB=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+`export KATACODA_LB={{TRAFFIC_HOST2_80}}`{{execute}}
 
 ##### Substituindo o Balanceador no Manifesto:
 `envsubst < ./manifestos/wordpress-ingress.yaml | kubectl apply -f -`{{execute}}
@@ -118,4 +118,4 @@ spec:
 
 ##### Testando
 
-[Acesso ao Site por Ingress](https://wordpress.[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/)
+[Acesso ao Site por Ingress](https://wordpress.{{TRAFFIC_HOST2_80}})
