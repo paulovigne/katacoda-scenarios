@@ -7,7 +7,7 @@
     "steps": [
       {
         "title": "Cluster Kubernetes",
-        "code": "step1-foreground.sh",
+        "foreground": "step1-foreground.sh",
         "text": "step1.md"
       },
       {
@@ -110,6 +110,6 @@
     "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.18"
+    "imageid": "kubernetes-kubeadm-2nodes"
   }
 }
