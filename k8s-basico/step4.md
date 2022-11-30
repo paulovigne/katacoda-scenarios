@@ -20,12 +20,12 @@ spec:
 ```
 
 ##### Obtendo o Nome do Balanceador do Katacoda:
-`export KATACODA_LB=[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com`{{execute}}
+`export KATACODA_LB={{TRAFFIC_HOST1_80}}`{{execute}}
 
 ##### Substituindo o Balanceador no Manifesto:
 `envsubst < ./manifestos/webserver-ingress.yaml | kubectl apply -f -`{{execute}}
 
-[Acesso ao Site por Ingress](https://webserver.[[HOST2_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/)
+[Acesso ao Site por Ingress](https://webserver.{{TRAFFIC_HOST1_80}})
 
 #### Verificando o Ingress:
 
