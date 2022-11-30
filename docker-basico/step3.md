@@ -47,7 +47,7 @@ Devemos observar o seguinte, para saber em que porta o container roda, devemos s
 
 `curl 127.0.0.1:8080`{{execute}}
 
-ou pelo link do [host](https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/)
+ou pelo link do [host]({{TRAFFIC_HOST1_8080}})
 
 ##### Vamos parar o container:
 
@@ -77,4 +77,4 @@ Caso deseje apenas iniciar novamente o container, execute `docker start nginx`{{
 
 `curl 127.0.0.1:80`{{execute}}
 
-ou pelo link do [host](https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/)
+ou pelo link do [host]({{TRAFFIC_HOST1_80}})
