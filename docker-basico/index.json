@@ -7,7 +7,7 @@
     "steps": [
       {
         "title": "Ambiente Docker",
-        "foreground": "init.sh",
+        "background": "init.sh",
         "text": "step1.md"
       },
       {
