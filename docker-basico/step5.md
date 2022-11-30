@@ -4,11 +4,11 @@ Vamos criar dois containers com a imagem de teste "simple-webapp-color" observe 
 
 `docker run --rm --name fundo_rosa -e APP_COLOR=pink -d -p 8080:8080 mmumshad/simple-webapp-color`{{execute}}
 
-Veja a app [fundo_rosa](https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/)
+Veja a app [fundo_rosa]({{TRAFFIC_HOST1_8080}})
 
 `docker run --rm --name fundo_azul -e APP_COLOR=blue -d -p 8081:8080 mmumshad/simple-webapp-color`{{execute}}
 
-Veja a app [fundo_azul](https://[[HOST_SUBDOMAIN]]-8081-[[KATACODA_HOST]].environments.katacoda.com/)
+Veja a app [fundo_azul]({{TRAFFIC_HOST1_8081}})
 
 #### Persistindo dados por volumes
 Como já sabemos, containers são efêmeros, não persistem dados caso sejam removidos, para isso podemos mapear volumes no host ou até remotamente.
@@ -23,7 +23,7 @@ O Parâmetro "-v" irá fazer a ligação do volume local com o diretório dentro
 
 `docker run --rm --name nginx -d -p 80:80 -v ~/volume:/usr/share/nginx/html nginx`{{execute}}
 
-Experimente alterar o arquivo no hospedeiro e visualizar a [aplicação](https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/)
+Experimente alterar o arquivo no hospedeiro e visualizar a [aplicação]({{TRAFFIC_HOST1_80}})
 
 ##### Inspecione o ambiente e limpe
 
