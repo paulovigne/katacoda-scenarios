@@ -52,7 +52,7 @@ spec:
 
 #### Aplicando o Statefulset, repare no uso das secrets como variáveis em env/secretKeyRef
 
-`kubectl apply -f ./manifestos/mysql-statefulset.yaml`{{execute}}
+`kubectl apply -f ./manifestos/drupal-mysql-statefulset.yaml`{{execute}}
 
 ##### Verificando o Deployment:
 
