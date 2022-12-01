@@ -98,10 +98,6 @@
         {
           "file": "wordpress-ingress.yaml",
           "target": "manifestos"
-        },
-        {
-          "file": "install-ingress.yaml",
-          "target": "manifestos"
         }
       ]
     }
