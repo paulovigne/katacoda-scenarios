@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: wordpress-mysql
-  namespace: wordpress
+  name: drupal-mysql
+  namespace: drupal
   labels:
-    app: wordpress
+    app: drupal
 spec:
   selector:
     matchLabels:
-      app: wordpress
+      app: drupal
       tier: db
-  serviceName: "wordpress-mysql"
+  serviceName: "drupal-mysql"
   template:
     metadata:
       labels:
-        app: wordpress
+        app: drupal
         tier: db
     spec:
       containers:
