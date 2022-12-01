@@ -5,24 +5,24 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: wordpress-mysql
-  namespace: wordpress
+  name: drupal-mysql
+  namespace: drupal
   labels:
-    app: wordpress
+    app: drupal
 spec:
   selector:
     matchLabels:
-      app: wordpress
+      app: drupal
       tier: mysql
-  serviceName: "wordpress-mysql"
+  serviceName: "drupal-mysql"
   template:
     metadata:
       labels:
-        app: wordpress
+        app: drupal
         tier: db
     spec:
       containers:
-      - image: mysql:5.6
+      - image: mysql:5.7
         name: mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
@@ -52,31 +52,31 @@ spec:
 
 #### Aplicando o Statefulset, repare no uso das secrets como variáveis em env/secretKeyRef
 
-`kubectl apply -f ./manifestos/wordpress-statefulset.yaml`{{execute}}
+`kubectl apply -f ./manifestos/mysql-statefulset.yaml`{{execute}}
 
 ##### Verificando o Deployment:
 
-`kubectl -n wordpress rollout status statefulset wordpress-mysql`{{execute}}
+`kubectl -n drupal rollout status statefulset drupal-mysql`{{execute}}
 
-`kubectl -n wordpress get statefulsets`{{execute}}
+`kubectl -n drupal get statefulsets`{{execute}}
 
-`kubectl -n wordpress describe statefulset wordpress-mysql`{{execute}}
+`kubectl -n drupal describe statefulset drupal-mysql`{{execute}}
 
-`kubectl -n wordpress get pods -l tier=db`{{execute}}
+`kubectl -n drupal get pods -l tier=db`{{execute}}
 
 ##### Verificando os logs do MySQL:
 
-`kubectl -n wordpress logs wordpress-mysql-0 --tail=10 -f`{{execute}}
+`kubectl -n drupal logs drupal-mysql-0 --tail=10 -f`{{execute}}
 
 * Digite Ctrl + C para sair, pois estamos com o -f habilitado (follow).
 
 ##### Acessando o POD do MySQL:
 
-`kubectl -n wordpress exec -it wordpress-mysql-0 -- bash`{{execute}}
+`kubectl -n drupal exec -it drupal-mysql-0 -- bash`{{execute}}
 
 * Para acessar o console do MySQL digite: `mysql -u root -pPassWord00`{{execute}}
 * Liste os Bancos: `show databases;`{{execute}}
-* Acesso um Banco: `use wordpress;`{{execute}}
+* Acesso um Banco: `use drupal;`{{execute}}
 * Liste as Tabelas: `show tables;`{{execute}}
 * Para Sair: `quit`{{execute}}
 * Estamos dentro do pod para sair digite `exit`{{execute}}
@@ -87,21 +87,21 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: wordpress-mysql
-  namespace: wordpress
+  name: drupal-mysql
+  namespace: drupal
   labels:
-    app: wordpress
+    app: drupal
 spec:
   ports:
     - port: 3306
   selector:
-    app: wordpress
+    app: drupal
     tier: db
   clusterIP: None
 ```
 
-`kubectl apply -f ./manifestos/wordpress-service-mysql.yaml`{{execute}}
+`kubectl apply -f ./manifestos/drupal-service-mysql.yaml`{{execute}}
 
 ##### Verificando o Serviço
 
-`kubectl -n wordpress get svc`{{execute}}
+`kubectl -n drupal get svc`{{execute}}
