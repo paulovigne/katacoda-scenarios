@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wordpress
-  namespace: wordpress
+  name: drupal
+  namespace: drupal
   labels:
-    app: wordpress
+    app: drupal
 spec:
   ports:
   - name: http
@@ -12,6 +12,6 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: wordpress
+    app: drupal
     tier: frontend
   type: ClusterIP
