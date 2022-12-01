@@ -1,62 +1,41 @@
 
-### Realizando um Deployment WordPress
+### Realizando o Deployment do Drupal
 
 ```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wordpress
-  namespace: wordpress
+  name: drupal
+  namespace: drupal
   labels:
-    app: wordpress
+    app: drupal
 spec:
   selector:
     matchLabels:
-      app: wordpress
+      app: drupal
       tier: frontend
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: wordpress
+        app: drupal
         tier: frontend
     spec:
       containers:
-      - image: wordpress:5.4-php7.2-apache
-        name: wordpress
-        env:
-        - name: WORDPRESS_DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-pass
-              key: password
-        - name: WORDPRESS_DB_USER
-          valueFrom:
-            configMapKeyRef:
-              name: mysql-param
-              key: username
-        - name: WORDPRESS_DB_NAME
-          valueFrom:
-            configMapKeyRef:
-              name: mysql-param
-              key: database
-        - name: WORDPRESS_DB_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: mysql-param
-              key: hostname
+      - image: drupal:9.4.8-apache
+        name: drupal
         ports:
         - containerPort: 80
-          name: wordpress
+          name: drupal
 ```
-##### Fazendo o Deploy do POD WordPress, repare os ConfigMaps e Secrets como variaveis de ambiente
+##### Fazendo o Deploy do POD drupal, repare os ConfigMaps e Secrets como variaveis de ambiente
 
-`kubectl apply -f ./manifestos/wordpress-deployment.yaml`{{execute}}
+`kubectl apply -f ./manifestos/drupal-deployment.yaml`{{execute}}
 
 ##### Verificando o Deployment:
 
-`kubectl -n wordpress get pods -l tier=frontend`{{execute}}
+`kubectl -n drupal get pods -l tier=frontend`{{execute}}
 
 ##### Criando Service ClusterIP:
 
@@ -64,10 +43,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: wordpress
-  namespace: wordpress
+  name: drupal
+  namespace: drupal
   labels:
-    app: wordpress
+    app: drupal
 spec:
   ports:
   - name: http
@@ -75,16 +54,16 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: wordpress
+    app: drupal
     tier: frontend
   type: ClusterIP
 ```
 
-`kubectl apply -f ./manifestos/wordpress-service.yaml`{{execute}}
+`kubectl apply -f ./manifestos/drupal-service.yaml`{{execute}}
 
 ##### Verificando o Serviço
 
-`kubectl -n wordpress get svc`{{execute}}
+`kubectl -n drupal get svc`{{execute}}
 
 ##### Criando o Ingress
 
@@ -93,9 +72,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   labels:
-    app: wordpress
-  name: wordpress
-  namespace: wordpress
+    app: drupal
+  name: drupal
+  namespace: drupal
 spec:
   rules:
   - host: ${INGRESS_HOST}
@@ -103,7 +82,7 @@ spec:
       paths:
       - backend:
           service:
-            name: wordpress
+            name: drupal
             port:
               number: 80
         path: /
@@ -112,11 +91,11 @@ spec:
 
 
 ##### Obtendo o Nome do Balanceador do Katacoda:
-`KILLERCODA_LB=$(echo {{TRAFFIC_HOST2_80}} | cut -d/ -f3);KILLERCODA_LB_ID=$(echo $KILLERCODA_LB | cut -d. -f1);KILLERCODA_LB_SUFIX=$(echo $KILLERCODA_LB | cut -d. -f2-10);export INGRESS_HOST=$KILLERCODA_LB_ID.wordpress.$KILLERCODA_LB_SUFIX
+`KILLERCODA_LB=$(echo {{TRAFFIC_HOST2_80}} | cut -d/ -f3);KILLERCODA_LB_ID=$(echo $KILLERCODA_LB | cut -d. -f1);KILLERCODA_LB_SUFIX=$(echo $KILLERCODA_LB | cut -d. -f2-10);export INGRESS_HOST=$KILLERCODA_LB_ID.drupal.$KILLERCODA_LB_SUFIX
 `{{execute}}
 
 ##### Substituindo o Balanceador no Manifesto:
-`envsubst < ./manifestos/wordpress-ingress.yaml | kubectl apply -f -`{{execute}}
+`envsubst < ./manifestos/drupal-ingress.yaml | kubectl apply -f -`{{execute}}
 
 ##### Repare que agora existem dois ingresses no mesmo balanceador:
 `kubectl get ingress -A`{{execute}}
