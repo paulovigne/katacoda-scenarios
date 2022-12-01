@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wordpress-mysql
-  namespace: wordpress
+  name: drupal-mysql
+  namespace: drupal
   labels:
-    app: wordpress
+    app: drupal
 spec:
   ports:
     - port: 3306
   selector:
-    app: wordpress
+    app: drupal
     tier: db
   clusterIP: None
