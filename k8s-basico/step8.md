@@ -104,3 +104,10 @@ spec:
 
 ##### Veja no Navegador:
 `echo Digite o Seguinte endereço no Browser: https://${INGRESS_HOST}`{{execute}}
+
+##### Configurando o Drupal:
+Após a abertura no Browser jogue os parâmetros previamente configurados para o Banco:
+* ***Usuário:*** `drupal_user`
+* ***Senha:*** `PassWord00`
+* ***Banco de Dados:*** `drupal`
+* ***Servidor de Banco:*** `drupal-mysql`
