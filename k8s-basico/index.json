@@ -35,7 +35,7 @@
         "text": "step7.md"
       },
       {
-        "title": "WordPress",
+        "title": "Drupal",
         "text": "step8.md"
       }
     ],
@@ -72,31 +72,31 @@
           "target": "manifestos"
         },
         {
-          "file": "wordpress-configmap.yaml",
+          "file": "mysql-configmap.yaml",
           "target": "manifestos"
         },
         {
-          "file": "wordpress-secret.yaml",
+          "file": "mysql-secret.yaml",
           "target": "manifestos"
         }, 
         {
-          "file": "wordpress-statefulset.yaml",
+          "file": "drupal-mysql-statefulset.yaml",
           "target": "manifestos"
         }, 
         {
-          "file": "wordpress-service-mysql.yaml",
+          "file": "drupal-service-mysql.yaml",
           "target": "manifestos"
         },
         {
-          "file": "wordpress-deployment.yaml",
+          "file": "drupal-deployment.yaml",
           "target": "manifestos"
         },
         {
-          "file": "wordpress-service.yaml",
+          "file": "drupal-service.yaml",
           "target": "manifestos"
         },
         {
-          "file": "wordpress-ingress.yaml",
+          "file": "drupal-ingress.yaml",
           "target": "manifestos"
         }
       ]
