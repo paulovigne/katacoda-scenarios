@@ -4,7 +4,7 @@ Este ambiente é um playground para você treinar livremente o Kubernetes, ele e
 
 O domínio que você poderá utilizar para expor suas aplicações será o seguinte:
 
-KILLERCODA_LB=$(echo {{TRAFFIC_HOST2_80}} | cut -d/ -f3);KILLERCODA_LB_ID=$(echo $KILLERCODA_LB | cut -d. -f1);KILLERCODA_LB_SUFIX=$(echo $KILLERCODA_LB | cut -d. -f2-10);export INGRESS_HOST=$KILLERCODA_LB_ID.APLICACAO.$KILLERCODA_LB_SUFIX; echo $INGRESS_HOST{{execute}}
+`KILLERCODA_LB=$(echo {{TRAFFIC_HOST2_80}} | cut -d/ -f3);KILLERCODA_LB_ID=$(echo $KILLERCODA_LB | cut -d. -f1);KILLERCODA_LB_SUFIX=$(echo $KILLERCODA_LB | cut -d. -f2-10);export INGRESS_HOST=$KILLERCODA_LB_ID.APLICACAO.$KILLERCODA_LB_SUFIX; echo $INGRESS_HOST`{{execute}}
 
 Onde APLICACAO será o nome de sua escolha, crie quantos ingress hosts quiser!
 
