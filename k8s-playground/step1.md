@@ -4,8 +4,9 @@ Este ambiente é um playground para você treinar livremente o Kubernetes, ele e
 
 O domínio que você poderá utilizar para expor suas aplicações será o seguinte:
 
-`KILLERCODA_LB=$(echo {{TRAFFIC_HOST2_80}} | cut -d/ -f3);KILLERCODA_LB_ID=$(echo $KILLERCODA_LB | cut -d. -f1);KILLERCODA_LB_SUFIX=$(echo $KILLERCODA_LB | cut -d. -f2-10);export INGRESS_HOST=$KILLERCODA_LB_ID.APLICACAO.$KILLERCODA_LB_SUFIX; clear; echo $INGRESS_HOST`{{execute}}
+`KILLERCODA_LB=$(echo {{TRAFFIC_HOST2_80}} | cut -d/ -f3);KILLERCODA_LB_ID=$(echo $KILLERCODA_LB | cut -d. -f1);KILLERCODA_LB_SUFIX=$(echo $KILLERCODA_LB | cut -d. -f2-10);export INGRESS_HOST=$KILLERCODA_LB_ID.APLICACAO.$KILLERCODA_LB_SUFIX; clear; echo; echo Exemplo: https://$INGRESS_HOST`{{execute}}
 
 Onde APLICACAO será o nome de sua escolha, crie quantos ingress hosts quiser!
 
-* Uma observação, o "-80." no nome do subdomínio é a porta do host que o ingress irá utilizar, caso deseje mudar para 443 fique a vontade, mesmo utilizando a porta 80, o LoadBalancer externo do Katacoda já dispinibiliza automaticamente um certificado ssl, basta chamar a url por "https://".
+* Uma observação, o "-80." no nome do subdomínio é a porta do host que o ingress irá utilizar, caso deseje mudar para 443 ou qualquer outra porta, fique a vontade,mesmo utilizando a porta 80, o LoadBalancer externo do Katacoda já dispinibiliza automaticamente um certificado ssl, basta chamar a url por "https://".
+* O Subdomínio da palavra "APLICACAO" é opcional, útil apenas para multiplos endereços de ingresses, para nodePort ele pode ser omitido apenas preocupe-se com a porta, ex: "-31080."
