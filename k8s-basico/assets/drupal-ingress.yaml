@@ -2,9 +2,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   labels:
-    app: wordpress
-  name: wordpress
-  namespace: wordpress
+    app: drupal
+  name: drupal
+  namespace: drupal
 spec:
   rules:
   - host: ${INGRESS_HOST}
@@ -12,7 +12,7 @@ spec:
       paths:
       - backend:
           service:
-            name: wordpress
+            name: drupal
             port:
               number: 80
         path: /
