@@ -20,10 +20,6 @@
     "assets": {
       "host01": [
         {
-          "file": "install-ingress.yaml",
-          "target": "manifestos"
-        },
-        {
           "file": "ingress.sh",
           "target": "scripts"
         }
