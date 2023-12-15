@@ -43,4 +43,4 @@ Vamos agora criar um docker registry local utilizando a [imagem oficial](https:/
 docker pull nginx
 ```
 
-* O Docker primeiro irá procura-la localmente, se não encontra-la irá em hub.docker.com, seu repositório padrão, caso não especificada, a tag será latest.
+* O Docker primeiro irá procura-la localmente, se não encontra-la irá em docker.io, seu repositório padrão, caso não especificada, a tag será latest.
